@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import Socials from "../components/Socials";
@@ -14,7 +13,7 @@ export default function Home({showMenu, setShowMenu}) {
 			<div className={styles.hero}>
 				<Socials showMenu={showMenu} setShowMenu={setShowMenu} className={styles.socials} />
 				<div className={styles.about}>
-					<h1>Hi, I'm Bukola Salawu! A Product Designer Based in Lagos Nigeria</h1>
+					<h1>Hi, I&apos;m Bukola Salawu! A Product Designer Based in Lagos Nigeria</h1>
 					<p>
 						An Agricultural science graduate who found purpose in product design . I am a passionate
 						product designer with great problem solving skills. I seek to make digital products

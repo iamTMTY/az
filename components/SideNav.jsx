@@ -20,9 +20,9 @@ export default function SideNav({ className, showMenu, setShowMenu }) {
 	return (
 		<div className={`${className} ${showMenu ? "showNav" : "hideNav"}`}>
 			<div className={styles.navHeader}>
-				<a href="/" className={styles.logo}>
+				<Link href="/" className={styles.logo}>
 					<img src="/assets/icons/logo.svg" alt="logo" />
-				</a>
+				</Link>
 				<Close className={styles.closeNav} onClick={closeNav} />
 			</div>
 
