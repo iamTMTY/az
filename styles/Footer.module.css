@@ -1,0 +1,44 @@
+.contactInfo {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 3%;
+	border-top: 2px solid #9e981c;
+	border-bottom: 1px solid #9e981c;
+	height: 60%;
+}
+
+.link {
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.link img {
+	width: 20px;
+	height: auto;
+	margin-right: 5px;
+}
+
+.copyright {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40%;
+}
+
+@media only screen and (max-width: 800px) {
+	.contactInfo {
+		padding: 20px 10px;
+	}
+
+	.copyright {
+		padding: 10px 0;
+	}
+
+	.link {
+		margin: 10px 10px 10px 0;
+	}
+}

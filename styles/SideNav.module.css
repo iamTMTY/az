@@ -1,0 +1,74 @@
+.navHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #9e981c;
+}
+
+.logo img {
+	width: 60px;
+	height: auto;
+}
+
+.closeNav {
+	display: none;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+}
+
+.nav {
+	display: flex;
+	flex-direction: column;
+	color: #9e981c;
+	margin-top: 50px;
+}
+
+.nav a {
+	font-weight: 600;
+	font-size: 1.2rem;
+	margin: 5px 0;
+}
+
+.subLink {
+	display: flex;
+	overflow: hidden;
+	transition: all ease 0.3s;
+}
+
+.linkHeader {
+	font-size: 1.2rem;
+	cursor: pointer;
+}
+
+.linkSubHeader {
+	font-size: 1rem;
+	margin-top: 10px;
+}
+
+.subLinkContent a {
+	color: black;
+	font-size: 1rem;
+	margin: 5px 0;
+}
+
+.subLinkContent a:hover {
+	text-decoration: underline;
+}
+
+.subLinkContent {
+	padding-left: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+@media only screen and (max-width: 800px) {
+	.closeNav {
+		display: initial;
+	}
+}
