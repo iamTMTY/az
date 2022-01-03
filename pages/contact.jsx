@@ -13,7 +13,7 @@ export default function contact({showMenu, setShowMenu}) {
       <h1>Contact</h1>
       <p>I am just a click away, let&apos;s create magic</p>
       <p>I am available for full time roles, freelance projects and design contracts</p>
-      <form className={styles.form} target="_blank" action="https://formsubmit.co/c7024c777401163aad80519933927c5f" method="POST">
+      <form className={styles.form} no target="_blank" action="https://formsubmit.co/c7024c777401163aad80519933927c5f" method="POST">
         <label htmlFor="name">Name</label>
         <input type="text" name="name" id="name" placeholder='Your Name' />
         <label htmlFor="email">Email</label>
