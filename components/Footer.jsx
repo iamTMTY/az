@@ -19,7 +19,7 @@ export default function Footer({ className }) {
 				</a>
 			</div>
 			<p className={styles.copyright}>
-				&copy; {new Date().getFullYear()}. All rights reserved. 1
+				&copy; {new Date().getFullYear()}. All rights reserved.
 			</p>
 		</footer>
 	)

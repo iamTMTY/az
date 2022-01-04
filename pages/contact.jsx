@@ -1,9 +1,23 @@
-import React from 'react'
+import React,{useRef} from 'react'
 import Head from 'next/head'
 import styles from '../styles/Contact.module.css'
 import Socials from '../components/Socials'
+import emailjs from '@emailjs/browser'
 
 export default function contact({showMenu, setShowMenu}) {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm("service_4wtt39w", 'template_5lirznc', form.current, 'user_zD8MRwbDxPGK4VfLB6U7g')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
   return (
     <div className={styles.container}>
       <Head>
@@ -13,15 +27,14 @@ export default function contact({showMenu, setShowMenu}) {
       <h1>Contact</h1>
       <p>I am just a click away, let&apos;s create magic</p>
       <p>I am available for full time roles, freelance projects and design contracts</p>
-      <form className={styles.form} no target="_blank" action="https://formsubmit.co/c7024c777401163aad80519933927c5f" method="POST">
+      <form className={styles.form} ref={form} onSubmit={sendEmail} >
         <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" placeholder='Your Name' />
+        <input type="text" required name="from_name" id="name" placeholder='Your Name' />
         <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" placeholder='Your Email' />
-        <input type="hidden" name="_subject" value="New email from portfolio" />
+        <input type="email" required name="from_email" id="email" placeholder='Your Email' />
         <label htmlFor="message">Message</label>
-        <textarea name="message" id="message" cols="30" rows="10" placeholder='Your Message' />
-        <button type='submit'>Submit</button>
+        <textarea name="message" required id="message" cols="30" rows="10" placeholder='Your Message' />
+        <button type='submit' style={{cursor: "pointer"}}>Submit</button>
       </form>
     </div>
   )
