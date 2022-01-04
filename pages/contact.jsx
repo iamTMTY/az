@@ -1,4 +1,4 @@
-import React,{useRef} from 'react'
+import React from 'react'
 import Head from 'next/head'
 import styles from '../styles/Contact.module.css'
 import Socials from '../components/Socials'
@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser'
 
 export default function contact({showMenu, setShowMenu}) {
 
-  const form = useRef();
+  const form = React.createRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
