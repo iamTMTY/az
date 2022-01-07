@@ -4,15 +4,10 @@
 	align-items: center;
 }
 
-.logo {
-	font-size: 1.5rem;
-	font-weight: bold;
-	color: #9e981c;
-}
-
-.logo img {
+.navHeader img {
 	width: 60px;
 	height: auto;
+	cursor: pointer;
 }
 
 .closeNav {
@@ -43,6 +38,7 @@
 
 .linkHeader {
 	font-size: 1.2rem;
+	font-weight: 600;
 	cursor: pointer;
 }
 

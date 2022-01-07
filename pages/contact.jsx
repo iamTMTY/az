@@ -1,23 +1,48 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import styles from '../styles/Contact.module.css'
 import Socials from '../components/Socials'
 import emailjs from '@emailjs/browser'
+import Success from '../icons/Success'
+import Error from '../icons/Error'
+import Close from '../components/Close'
 
 export default function contact({showMenu, setShowMenu}) {
 
   const form = React.createRef();
 
+  const [mail, setMail] = useState({
+    isSending: false,
+    status: ""
+  })
+
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm("service_4wtt39w", 'template_5lirznc', form.current, 'user_zD8MRwbDxPGK4VfLB6U7g')
+    setMail({
+      isSending: true,
+      status: "pending"
+    })
+    emailjs.sendForm("service_2peqeop", 'template_fjuicah', form.current, 'user_FrTRDFLL3CWchBVevzkHB')
       .then((result) => {
-          console.log(result.text);
+        setMail({
+          isSending: true,
+          status: "success"
+        })
+          // console.log(result.text);
       }, (error) => {
+        setMail({
+          isSending: true,
+          status: "error"
+        })
           console.log(error.text);
       });
   };
+
+  useEffect(() => {
+		setShowMenu(false)
+	}, [])
+
   return (
     <div className={styles.container}>
       <Head>
@@ -36,6 +61,22 @@ export default function contact({showMenu, setShowMenu}) {
         <textarea name="message" required id="message" cols="30" rows="10" placeholder='Your Message' />
         <button type='submit' style={{cursor: "pointer"}}>Submit</button>
       </form>
+      {mail.isSending && 
+        <div className={`${styles.mailModal} mailModal`} onClick={(e) => {
+          e.target.classList.contains("mailModal") && mail.status !== "pending" && setMail({isSending: false, status: "pending"})
+        }}>
+          <div className={styles.modalContent}>
+            {mail.status === "pending" ? <p>Sending Your Message...</p> :
+            <>
+              <Close onClick={() => {setMail({isSending: false, status: "pending"})}} className={styles.close} />
+              {mail.status === "success" && <Success className={styles.success} />}
+              {mail.status === "error" && <Error className={styles.error} />}
+              {mail.status === "success" && <p>Message Sent Successfully</p>}
+              {mail.status === "error" && <p>There was an error sending the message. You can contact me through my social media accounts or try again after some time.</p>}
+            </>
+            }
+          </div>         
+        </div>}
     </div>
   )
 }

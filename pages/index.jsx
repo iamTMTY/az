@@ -2,8 +2,13 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import Socials from "../components/Socials";
+import { useEffect } from "react";
 
 export default function Home({showMenu, setShowMenu}) {
+
+	useEffect(() => {
+		setShowMenu(false)
+	}, [])
 
 	return (
 		<div className={styles.container}>
@@ -24,7 +29,7 @@ export default function Home({showMenu, setShowMenu}) {
 						life. I love to visit places where I can sit in solitude and experience people outside
 						my personal space.
 					</p>
-					<button className={styles.cv}>Download CV</button>
+					<a href="https://drive.google.com/file/d/1uh5xjHLmolnrvq0_ho-Q6Xh1GsSKYGxv/view?usp=sharing" className={styles.cv}>View CV</a>
 				</div>
 			</div>
 			<div className={styles.projects}>

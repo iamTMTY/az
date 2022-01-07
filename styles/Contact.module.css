@@ -47,6 +47,7 @@
 	font-size: 1rem;
 	border: none;
 	border-radius: 5px;
+	cursor: pointer;
 }
 
 .form input,
@@ -66,10 +67,58 @@
 	border-color: #9e981c;
 }
 
+.mailModal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #9e981c70;
+}
+
+.modalContent {
+	position: relative;
+	min-width: 200px;
+	min-height: 200px;
+	max-width: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 50px;
+	background-color: #fff;
+	border-radius: 10px;
+}
+
+.modalContent p {
+	font-weight: bold;
+}
+
+.success,
+.error {
+	width: 100px;
+	height: 100px;
+	margin-bottom: 10px;
+}
+
+.close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+}
+
 @media only screen and (max-width: 800px) {
 	.socials {
 		justify-content: space-between;
-		height: 100%;
+		height: 100vh;
 	}
 
 	.form,
