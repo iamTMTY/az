@@ -7,7 +7,7 @@ import Success from '../icons/Success'
 import Error from '../icons/Error'
 import Close from '../components/Close'
 
-export default function contact({showMenu, setShowMenu}) {
+export default function Contact({showMenu, setShowMenu}) {
 
   const form = React.createRef();
 
